@@ -28,6 +28,6 @@ export default class CarODM {
   }
 
   public async getById(id: string): Promise<ICar | null> {
-    return this.model.findById(id);
+    return this.model.findById({ _id: id });
   }
 }
