@@ -33,7 +33,7 @@ export default class MotorcycleService {
     }
     const motorcycle = await model.getById(id);
     if (!motorcycle) {
-      const message = { message: 'Car not found' };
+      const message = { message: 'Motorcycle not found' };
       return { status: 404, message };
     }
     const message = this.createMotorcycleDomain(motorcycle);
