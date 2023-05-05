@@ -22,4 +22,13 @@ export default class CarController {
       this.next(error);
     }
   }
+
+  public async getAll() {
+    try {
+      const { status, message } = await this.service.getAll();
+      return this.res.status(status).json(message);
+    } catch (error) {
+      this.next(error);
+    }
+  }
 }
