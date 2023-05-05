@@ -39,4 +39,19 @@ export default class CarService {
     const message = this.createCarDomain(car);
     return { status: 200, message };
   }
+
+  public async updateById(id: string, car: ICar) {
+    const model = new CarODM();
+    if (!isValidObjectId(id)) {
+      const message = { message: 'Invalid mongo id' };
+      return { status: 422, message };
+    }
+    const updatedCar = await model.updateById(id, car);
+    if (!updatedCar) {
+      const message = { message: 'Car not found' };
+      return { status: 404, message };
+    }
+    const message = this.createCarDomain(updatedCar);
+    return { status: 200, message };
+  }
 }
