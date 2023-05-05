@@ -1,6 +1,6 @@
-import IVehicles from './IVehicles';
+import IVehicle from './IVehicle';
 
-export default interface IMotorcycle extends IVehicles{
+export default interface IMotorcycle extends IVehicle{
   category: string;
   engineCapacity: number;
 }

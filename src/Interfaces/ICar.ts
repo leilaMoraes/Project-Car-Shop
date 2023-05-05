@@ -1,6 +1,6 @@
-import IVehicles from './IVehicles';
+import IVehicle from './IVehicle';
 
-export default interface ICar extends IVehicles{
+export default interface ICar extends IVehicle{
   doorsQty: number;
   seatsQty: number;
 }
