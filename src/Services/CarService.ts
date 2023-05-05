@@ -16,4 +16,11 @@ export default class CarService {
     const message = this.createCarDomain(newCar);
     return { status: 201, message };
   }
+
+  public async getAll() {
+    const model = new CarODM();
+    const cars = await model.getAll();
+    const message = cars.map((car) => this.createCarDomain(car));
+    return { status: 200, message };
+  }
 }
